@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Delivery App</title>
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Data Delivery App v1</h1>
+    <form id="excelForm">
+        <label for="inputPath">Input Directory Path:</label>
+        <input type="text" id="inputPath" name="inputPath"><br>
+
+        <label for="outputPath">Output Directory Path:</label>
+        <input type="text" id="outputPath" name="outputPath"><br>
+
+        <label for="tableName">Table Name:</label>
+        <input type="text" id="tableName" name="tableName"><br>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <div id="response">
+        <p id="message"></p>
+        <p id="error"></p>
+    </div>
+</div>
+
+<script src="JS/script.js"></script>
+</body>
+</html>
