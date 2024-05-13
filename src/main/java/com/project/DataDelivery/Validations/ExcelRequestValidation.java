@@ -1,6 +1,6 @@
 package com.project.DataDelivery.Validations;
 
-import com.project.DataDelivery.Entity.ExcelRequest;
+import com.project.DataDelivery.Dto.ExcelRequest;
 import com.project.DataDelivery.Exceptions.ValidationException;
 
 import java.util.HashMap;

@@ -11,11 +11,6 @@ public class CustomLogger {
     private static final String ANSI_RED = "\u001B[31m";
     private static final String ANSI_YELLOW = "\u001B[33m";
 
-    public static void logExecutionTime(Long startTime, Long endTime, String message) {
-        double executionTime = (double) (endTime - startTime) / 1_000_000_000;
-        logger.info(message + " : " + executionTime + " seconds");
-    }
-
     public static void logSuccess(String message, Long startTime, Long endTime) {
         double executionTime = (double) (endTime - startTime) / 1_000_000_000;
         System.out.println(ANSI_GREEN + "\n[SUCCESS] " + message + " : TIME TAKEN " + executionTime + " seconds" + ANSI_RESET + "\n");

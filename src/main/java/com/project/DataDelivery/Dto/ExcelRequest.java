@@ -1,4 +1,4 @@
-package com.project.DataDelivery.Entity;
+package com.project.DataDelivery.Dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

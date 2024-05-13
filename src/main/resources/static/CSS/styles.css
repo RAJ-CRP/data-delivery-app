@@ -50,8 +50,3 @@ button:hover {
     border-radius: 4px;
     background-color: #f0f0f0;
 }
-
-#response #message {
-    color: RED;
-    margin-bottom: 5px;
-}

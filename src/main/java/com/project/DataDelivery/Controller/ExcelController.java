@@ -2,7 +2,7 @@ package com.project.DataDelivery.Controller;
 
 import com.project.DataDelivery.Helpers.CustomLogger;
 import com.project.DataDelivery.Helpers.CustomResponse;
-import com.project.DataDelivery.Entity.ExcelRequest;
+import com.project.DataDelivery.Dto.ExcelRequest;
 import com.project.DataDelivery.Services.ExcelService;
 import com.project.DataDelivery.Services.StorageService;
 import com.project.DataDelivery.Validations.ExcelRequestValidation;
@@ -22,8 +22,8 @@ public class ExcelController {
     @Autowired
     private StorageService storageService;
 
-    @PostMapping("/processExcel")
-    public ResponseEntity<?> processExcel(@RequestBody ExcelRequest excelRequest) {
+    @PostMapping("/process")
+    public ResponseEntity<?> processRequest(@RequestBody ExcelRequest excelRequest) {
         long startTime = System.nanoTime();
 
         // Validate Excel Request
@@ -33,7 +33,7 @@ public class ExcelController {
         excelService.saveAllExcelFiles(excelRequest.getInputPath(), excelRequest.getTableName());
 
         // Export data to CSV file and Store it locally
-        String savedFileName = excelService.exportDataToCsv(excelRequest.getOutputPath(), excelRequest.getTableName());
+        String savedFileName = excelService.exportDataToCsvMultiThreading(excelRequest.getOutputPath(), excelRequest.getTableName());
 
         // Upload CSV file to AWS S3
         String uploadedFileName = storageService.uploadFile(savedFileName, excelRequest.getOutputPath());

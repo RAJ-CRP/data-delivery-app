@@ -32,7 +32,7 @@ public class ExcelRepository {
             jdbcTemplate.batchUpdate(INSERT_DATA_QUERY, new ExcelBatchPreparedStatementSetter(sheet, totalRow));
 
             long endTime = System.nanoTime();
-            CustomLogger.logExecutionTime(startTime, endTime, "Excel file insert time");
+            logger.info("Excel file insert time : " + (double) (endTime - startTime) / 1_000_000_000 + " seconds");
         } catch (RuntimeException e) {
             logger.error("SAVE EXCEL ERROR: ", e);
         }
@@ -47,7 +47,7 @@ public class ExcelRepository {
 
         long endTime = System.nanoTime();
         long endOffset = offset + batchSize;
-        CustomLogger.logExecutionTime(startTime, endTime, "Batch [" + offset + " - " + endOffset + "] data read time");
+        logger.info("Batch [" + offset + " - " + endOffset + "] data read time : " + (double) (endTime - startTime) / 1_000_000_000 + " seconds");
         return data;
     }
 
@@ -58,7 +58,7 @@ public class ExcelRepository {
         long rowsCount = jdbcTemplate.queryForObject(GET_ROW_COUNT_QUERY, Long.class);
 
         long endTime = System.nanoTime();
-        CustomLogger.logExecutionTime(startTime, endTime, "Total rows count read time");
+        logger.info("Total rows count read time : " + (double) (endTime - startTime) / 1_000_000_000 + " seconds");
         return rowsCount;
     }
 
