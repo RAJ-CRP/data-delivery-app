@@ -55,15 +55,15 @@
 			<artifactId>aws-java-sdk</artifactId>
 			<version>1.12.693</version>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-tomcat</artifactId>-->
-<!--			<scope>provided</scope>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
-<!--	<packaging>war</packaging>-->
+	<packaging>war</packaging>
 	<build>
-<!--		<finalName>data-delivery</finalName>-->
+		<finalName>data-delivery</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

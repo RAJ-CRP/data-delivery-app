@@ -27,7 +27,7 @@ function submitForm() {
         tableName: document.getElementById("tableName").value
     };
 
-    fetch('/api/process', {
+    fetch('api/process', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
